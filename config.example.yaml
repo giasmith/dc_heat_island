@@ -1,0 +1,33 @@
+paths:
+  LAND_COVER: /path/to/CLCD_v01_2025_albert.tif
+  DEM: /path/to/CHINA_DEM_SRTMGL1.tif
+  WATER_STRESS: /path/to/Aq40_Y2023D07M05.gdb
+  GRID_INFRASTRUCTURE: /path/to/resources_filtered.gpkg
+  OUT_DIR: outputs/tensors
+  DIAGNOSTIC_DIR: outputs/diagnostics
+vectors:
+  WATER_STRESS_LAYER:
+  WATER_STRESS_VALUE_COLUMN: bws_score
+  GRID_LAYER:
+spatial:
+  TILE_SIZE: 512
+  TARGET_RES_METERS: 300
+  DROP_INCOMPLETE_TILES: true
+land_cost:
+  ALPHA: 1.0
+  ZERO_COST_CLASSES: [4, 7]
+  INTERMEDIATE_COST_CLASSES: [2, 8]
+  HIGH_COST_CLASSES: [1, 5]
+  INTERMEDIATE_PENALTY: 1.0
+  HIGH_PENALTY: 1000000
+  DEFAULT_PENALTY: 5.0
+TENSOR_CHANNELS:
+  - water_stress
+  - grid_distance
+  - land_cost
+  - slope
+  - land_cover_penalty
+  - elevation
+  - land_cover
+  - grid_binary
+

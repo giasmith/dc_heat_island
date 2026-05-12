@@ -1,0 +1,10 @@
+geopandas
+numpy
+pandas
+PyYAML
+rasterio
+rioxarray
+scipy
+torch
+xarray
+

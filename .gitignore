@@ -158,6 +158,16 @@ env.bak/
 venv.bak/
 
 # Spyder project settings
+
+# Local geospatial data and generated tensors
+data/
+outputs/
+config.local.yaml
+*.pt
+*.tif
+*.tiff
+*.gpkg
+*.gdb/
 .spyderproject
 .spyproject
 
